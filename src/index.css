@@ -11,6 +11,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  margin: 0;
+  width: 25%;
+  border: 1px solid #ddd;
+}
+
 #root {
   margin: auto;
   max-width: 700px;
@@ -41,4 +47,8 @@ body {
   background: #aaa;
   align-items: center;
   justify-content: end;
+}
+
+.zero {
+  width: 50%;
 }
