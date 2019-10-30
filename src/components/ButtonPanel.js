@@ -3,7 +3,7 @@ import Button from './Button';
 
 const ButtonPanel = () => {
   return (
-    <section>
+    <section id="ButtonPanel">
       <div className="group1">
         <Button name="AC" />
         <Button name="+/-" />

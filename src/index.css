@@ -6,3 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+#root {
+  margin: auto;
+  max-width: 700px;
+}
+
+#App,
+#Display,
+#ButtonPanel {
+  display: flex;
+}
+
+#App,
+#ButtonPanel {
+  flex-direction: column;
+}
