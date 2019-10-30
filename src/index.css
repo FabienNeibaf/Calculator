@@ -14,7 +14,7 @@ body {
 button {
   margin: 0;
   width: 25%;
-  border: 1px solid #ddd;
+  border: 1px solid #888;
 }
 
 #root {
@@ -44,11 +44,11 @@ button {
   color: #fff;
   padding: 1rem;
   line-height: 1;
-  background: #aaa;
+  background: #888;
   align-items: center;
   justify-content: end;
 }
 
-.zero {
+.x2 {
   width: 50%;
 }
