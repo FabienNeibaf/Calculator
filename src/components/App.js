@@ -11,7 +11,7 @@ export default class App extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   render() {
     return (
-      <div>
+      <div id="App">
         <Display />
         <ButtonPanel />
       </div>
