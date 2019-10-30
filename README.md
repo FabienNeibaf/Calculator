@@ -1,6 +1,6 @@
 # :hash: Calculator
 
-This project is first of two project in react learning.  
+This project is the first of two projects in react.js.  
 It is part of [microverse](https://www.microverse.org/) curriculum.
 
 # :electric_plug: Set up
@@ -13,7 +13,7 @@ To run the project:
 
 # :computer: Live demo
 
--
+- https://calculata.herokuapp.com
 
 # :pencil2: Contribute
 
