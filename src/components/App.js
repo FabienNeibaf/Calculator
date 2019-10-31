@@ -19,11 +19,11 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { total, handleClick } = this.state;
+    const { next, total } = this.state;
     return (
       <div id="App">
-        <Display result={total} />
-        <ButtonPanel clickHandler={handleClick} />
+        <Display result={next || total} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
