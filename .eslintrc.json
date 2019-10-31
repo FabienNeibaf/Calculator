@@ -1,0 +1,19 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": ["airbnb-base", "plugin:jest/recommended", "plugin:react/recommended", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "eol-last": 0,
+    "no-shadow": 0,
+    "no-param-reassign": 0,
+    "prettier/prettier": "error"
+  }
+}
