@@ -61,8 +61,11 @@ button:last-of-type {
   flex-direction: column;
 }
 
-.group,
 #Display {
+  min-height: 100px;
+}
+
+.group {
   height: 100px;
 }
 
@@ -79,6 +82,7 @@ button:last-of-type {
   font-weight: 400;
   text-align: right;
   background: #777;
+  word-break: break-all;
   justify-content: center;
 }
 
@@ -102,7 +106,8 @@ button:last-of-type {
     height: 70px;
   }
 
-  button {
-    font-size: 1.2em;
+  button,
+  #Display {
+    font-size: 1.4em;
   }
 }
