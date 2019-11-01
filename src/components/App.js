@@ -23,7 +23,10 @@ export default class App extends React.Component {
     const { step, next, total, operation } = this.state;
     return (
       <div id="App">
-        <Display step={step} result={operation === '=' ? total : next} />
+        <Display
+          step={step}
+          result={(operation === '=' ? total : next) || undefined}
+        />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );

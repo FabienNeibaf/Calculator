@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 const Display = ({ step, result }) => (
   <h1 id="Display">
     <span>{step}</span>
-    {result || 0}
+    {result}
   </h1>
 );
+
+Display.defaultProps = {
+  result: '0',
+};
 
 Display.propTypes = {
   step: PropTypes.string,

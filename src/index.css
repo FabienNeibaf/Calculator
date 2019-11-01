@@ -43,8 +43,9 @@ button:last-of-type {
 }
 
 #root {
-  margin: 10px auto;
+  padding: 5px;
   max-width: 700px;
+  margin: 10px auto;
 }
 
 #App,
@@ -94,4 +95,14 @@ button:last-of-type {
 
 .group:last-of-type button {
   border-bottom-width: 0;
+}
+
+@media (max-width: 400px) {
+  .group {
+    height: 70px;
+  }
+
+  button {
+    font-size: 1.2em;
+  }
 }
