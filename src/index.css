@@ -29,8 +29,13 @@ button {
   border-width: 0 1px 1px 0;
 }
 
-button:focus {
-  outline: 0;
+button:hover {
+  background: #f0f0f0 !important;
+}
+
+button:active {
+  padding: 0;
+  background: #fafafa !important;
 }
 
 button:last-of-type {
@@ -50,6 +55,7 @@ button:last-of-type {
 }
 
 #App,
+#Display,
 #ButtonPanel {
   flex-direction: column;
 }
@@ -70,9 +76,16 @@ button:last-of-type {
   padding: 1rem;
   line-height: 1;
   font-weight: 400;
+  text-align: right;
   background: #777;
-  align-items: center;
-  justify-content: end;
+  justify-content: center;
+}
+
+#Display span {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
 
 .x2 {

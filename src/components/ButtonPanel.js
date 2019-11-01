@@ -8,37 +8,37 @@ const ButtonPanel = ({ clickHandler }) => {
   return (
     <section id="ButtonPanel">
       <div className="group">
-        <Button name="AC" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="+/-" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name={`\u0025`} color="#f2f2f2" clickHandler={handleClick} />
+        <Button name="AC" color="#fafafa" clickHandler={handleClick} />
+        <Button name="+/-" color="#fafafa" clickHandler={handleClick} />
+        <Button name={`\u0025`} color="#fafafa" clickHandler={handleClick} />
         <Button name={`\u00f7`} clickHandler={handleClick} />
       </div>
       <div className="group">
-        <Button name="7" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="8" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="9" color="#f2f2f2" clickHandler={handleClick} />
+        <Button name="7" color="#fafafa" clickHandler={handleClick} />
+        <Button name="8" color="#fafafa" clickHandler={handleClick} />
+        <Button name="9" color="#fafafa" clickHandler={handleClick} />
         <Button name="x" clickHandler={handleClick} />
       </div>
       <div className="group">
-        <Button name="4" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="5" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="6" color="#f2f2f2" clickHandler={handleClick} />
+        <Button name="4" color="#fafafa" clickHandler={handleClick} />
+        <Button name="5" color="#fafafa" clickHandler={handleClick} />
+        <Button name="6" color="#fafafa" clickHandler={handleClick} />
         <Button name="-" clickHandler={handleClick} />
       </div>
       <div className="group">
-        <Button name="1" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="2" color="#f2f2f2" clickHandler={handleClick} />
-        <Button name="3" color="#f2f2f2" clickHandler={handleClick} />
+        <Button name="1" color="#fafafa" clickHandler={handleClick} />
+        <Button name="2" color="#fafafa" clickHandler={handleClick} />
+        <Button name="3" color="#fafafa" clickHandler={handleClick} />
         <Button name="+" clickHandler={handleClick} />
       </div>
       <div className="group">
         <Button
           name="0"
-          color="#f2f2f2"
+          color="#fafafa"
           wide={true}
           clickHandler={handleClick}
         />
-        <Button name="." color="#f2f2f2" clickHandler={handleClick} />
+        <Button name="." color="#fafafa" clickHandler={handleClick} />
         <Button name="=" clickHandler={handleClick} />
       </div>
     </section>

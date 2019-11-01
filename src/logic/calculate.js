@@ -18,6 +18,9 @@ const calculate = (calculator, buttonName) => {
       case `\u0025`:
       case `\u00f7`:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Add extra functionality
         if (total && next) {
           const computed = operate(total, next, operation);
           return {
@@ -35,6 +38,7 @@ const calculate = (calculator, buttonName) => {
           };
         }
         if (next)
+<<<<<<< HEAD
           return {
             next: null,
             total: next,
@@ -43,18 +47,25 @@ const calculate = (calculator, buttonName) => {
           };
 =======
         if (total && next)
+=======
+>>>>>>> Add extra functionality
           return {
-            total: operate(total, next, operation),
             next: null,
+            total: next,
             operation: buttonName,
+            step: `${next} ${buttonName}`,
           };
+<<<<<<< HEAD
         if (total) return { ...calculator, operation: buttonName };
         if (next) return { total: next, next: null, operation: buttonName };
 >>>>>>> Set logic up with component
+=======
+>>>>>>> Add extra functionality
         return calculator;
       case '=':
         if (total && next)
           return {
+<<<<<<< HEAD
 <<<<<<< HEAD
             next: null,
             operation: buttonName,
@@ -89,19 +100,45 @@ const calculate = (calculator, buttonName) => {
       next: e.message.replace('[big.js]', ''),
     };
 =======
-            total: operate(total, next, operation),
+=======
             next: null,
-            operation: null,
+            operation: buttonName,
+            step: `${total} ${operation} ${next} =`,
+>>>>>>> Add extra functionality
+            total: operate(total, next, operation),
           };
-        return calculator;
+        if (total)
+          return {
+            next: null,
+            operation: buttonName,
+            step: `${total} ${operation} 0 =`,
+            total: operate(total, 0, operation),
+          };
+        return { ...calculator, total: '0' };
       case 'AC':
-        return { total: null, next: null, operation: null };
+        return { step: null, total: null, next: null, operation: null };
       default:
+        if (operation === '=')
+          return {
+            step: null,
+            total: null,
+            operation: null,
+            next: buttonName,
+          };
         return { ...calculator, next: next ? next + buttonName : buttonName };
     }
   } catch (e) {
+<<<<<<< HEAD
     return { total: 'Unknown opperation', next: null, operation: null };
 >>>>>>> Set logic up with component
+=======
+    return {
+      total: null,
+      operation: null,
+      step: `${total} ${operation} ${next || 0}`,
+      next: e.message.replace('[big.js]', ''),
+    };
+>>>>>>> Add extra functionality
   }
 };
 
