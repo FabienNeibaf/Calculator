@@ -1,5 +1,7 @@
 import Big from 'big.js';
 
+Big.DP = 10;
+
 const operate = (numberOne, numberTwo, operation) => {
   switch (operation) {
     case '+':
@@ -10,7 +12,7 @@ const operate = (numberOne, numberTwo, operation) => {
       return Big(numberOne)
         .minus(numberTwo)
         .toString();
-    case 'X':
+    case 'x':
       return Big(numberOne)
         .times(numberTwo)
         .toString();
