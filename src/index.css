@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,4 +9,46 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  margin: 0;
+  width: 25%;
+  border: 1px solid #888;
+}
+
+#root {
+  margin: auto;
+  max-width: 700px;
+}
+
+#App,
+.group,
+#Display,
+#ButtonPanel {
+  display: flex;
+}
+
+#App,
+#ButtonPanel {
+  flex-direction: column;
+}
+
+.group,
+#Display {
+  height: 100px;
+}
+
+#Display {
+  margin: 0;
+  color: #fff;
+  padding: 1rem;
+  line-height: 1;
+  background: #888;
+  align-items: center;
+  justify-content: end;
+}
+
+.x2 {
+  width: 50%;
 }

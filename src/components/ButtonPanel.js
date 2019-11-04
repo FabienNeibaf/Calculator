@@ -3,34 +3,34 @@ import Button from './Button';
 
 const ButtonPanel = () => {
   return (
-    <section>
-      <div className="group1">
-        <Button name="AC" />
-        <Button name="+/-" />
-        <Button name={`\u0025`} />
+    <section id="ButtonPanel">
+      <div className="group">
+        <Button name="AC" color="#eee" />
+        <Button name="+/-" color="#eee" />
+        <Button name={`\u0025`} color="#eee" />
         <Button name={`\u00f7`} />
       </div>
-      <div className="group2">
-        <Button name="7" />
-        <Button name="8" />
-        <Button name="9" />
+      <div className="group">
+        <Button name="7" color="#eee" />
+        <Button name="8" color="#eee" />
+        <Button name="9" color="#eee" />
         <Button name="X" />
       </div>
-      <div className="group3">
-        <Button name="4" />
-        <Button name="5" />
-        <Button name="6" />
+      <div className="group">
+        <Button name="4" color="#eee" />
+        <Button name="5" color="#eee" />
+        <Button name="6" color="#eee" />
         <Button name="-" />
       </div>
-      <div className="group4">
-        <Button name="1" />
-        <Button name="2" />
-        <Button name="3" />
+      <div className="group">
+        <Button name="1" color="#eee" />
+        <Button name="2" color="#eee" />
+        <Button name="3" color="#eee" />
         <Button name="+" />
       </div>
-      <div className="group5">
-        <Button name="0" />
-        <Button name="." />
+      <div className="group">
+        <Button name="0" color="#eee" wide={true} />
+        <Button name="." color="#eee" />
         <Button name="=" />
       </div>
     </section>

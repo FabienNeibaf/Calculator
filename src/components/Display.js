@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Display = ({ result }) => <h1>{result}</h1>;
+const Display = ({ result }) => <h1 id="Display">{result}</h1>;
 
 Display.defaultProps = {
   result: '0',
