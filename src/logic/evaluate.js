@@ -20,8 +20,8 @@ const InputStream = input => {
 const PRECEDENCE = {
   '+': 1,
   '-': 1,
-  '*': 2,
-  '/': 2,
+  x: 2,
+  [`\u00f7`]: 2,
 };
 
 const readNumber = input => {
@@ -86,7 +86,7 @@ Expression = input => {
 };
 
 const evaluate = input => {
-  const expression = Expression(InputStream(input));
+  const expression = Expression(InputStream(input.replace(/\s/g, '')));
   const evaluator = expression => {
     if (typeof expression === 'string') return parseInt(expression, 10);
     switch (expression.operator) {
@@ -94,9 +94,9 @@ const evaluate = input => {
         return evaluator(expression.left) + evaluator(expression.right);
       case '-':
         return evaluator(expression.left) - evaluator(expression.right);
-      case '*':
+      case 'x':
         return evaluator(expression.left) * evaluator(expression.right);
-      case '/':
+      case `\u00f7`:
         return evaluator(expression.left) / evaluator(expression.right);
       default:
         throw new Error('Unknown expression');

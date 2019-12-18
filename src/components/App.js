@@ -7,8 +7,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      input: '',
+      result: '',
       expression: '',
-      result: null,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -18,10 +19,13 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { expression, result } = this.state;
+    let data;
+    const { expression, result, input } = this.state;
+    if (result !== '') data = result;
+    else if (input !== '') data = input;
     return (
       <div id="App">
-        <Display expression={expression} result={result} />
+        <Display expression={expression} result={data} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
