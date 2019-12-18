@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Display = ({ step, result }) => (
+const Display = ({ expression, result }) => (
   <h1 id="Display">
-    <span>{step}</span>
+    <span>{expression}</span>
     {result}
   </h1>
 );
@@ -13,7 +13,7 @@ Display.defaultProps = {
 };
 
 Display.propTypes = {
-  step: PropTypes.string,
+  expression: PropTypes.string,
   result: PropTypes.string,
 };
 
