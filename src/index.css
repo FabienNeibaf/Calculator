@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
 * {
+  font-family: Nunito;
   box-sizing: border-box;
 }
 
@@ -10,104 +13,117 @@
   border: none;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-button {
-  margin: 0;
-  width: 25%;
-  font-size: 2em;
-  border: 1px solid #888;
-  border-style: solid;
-  border-color: #777;
-  border-width: 0 1px 1px 0;
-}
-
-button:hover {
-  background: #f0f0f0 !important;
+  background: #697569;
 }
 
 button:active {
   padding: 0;
-  background: #fafafa !important;
-}
-
-button:last-of-type {
-  border-width: 0 0 1px;
-}
-
-#root {
-  padding: 5px;
-  max-width: 700px;
-  margin: 10px auto;
-}
-
-#App,
-.group,
-#Display,
-#ButtonPanel {
-  display: flex;
-}
-
-#App,
-#Display,
-#ButtonPanel {
-  flex-direction: column;
-}
-
-#Display {
-  min-height: 100px;
-}
-
-.group {
-  height: 100px;
-}
-
-#App {
-  border-radius: 3px;
-  border: 1px solid #777;
-}
-
-#Display {
-  margin: 0;
-  color: #fff;
-  padding: 1rem;
-  line-height: 1;
-  font-weight: 400;
-  text-align: right;
-  background: #777;
-  word-break: break-all;
-  justify-content: center;
-}
-
-#Display span {
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.4;
-  margin-bottom: 10px;
 }
 
 .x2 {
   width: 50%;
 }
 
-.group:last-of-type button {
-  border-bottom-width: 0;
+.group {
+  display: flex;
+  height: 16.66%;
+  padding: 1px 0;
 }
 
-@media (max-width: 400px) {
-  .group {
-    height: 70px;
+.group>button {
+  border: none;
+  color: #fff;
+  margin: 0 1px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background: none;
+  width: calc(25% - 2px);
+}
+
+.group>button.control {
+  background: #202822;
+}
+
+.group>button.numpad {
+  background: #1a201d;
+}
+
+.group>button.equal {
+  background: #4d4f20;
+}
+
+.group>button.numpad:hover,
+.group>button.control:hover {
+  background: #2a332c;
+}
+
+.group>button.equal:hover {
+  background: #666814;
+}
+
+#App {
+  margin: auto;
+  height: 100vh;
+  max-width: 1000px;
+  border-radius: 3px;
+}
+
+#Display {
+  height: 20%;
+  color: #fff;
+  background: #131a17;
+}
+
+#Display>p {
+  margin: 0;
+  display: flex;
+  cursor: default;
+  padding: 5px 15px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#Display>p:first-of-type {
+  height: 35%;
+}
+
+#Display>p:last-of-type {
+  height: 65%;
+  font-size: 2rem;
+}
+
+#ButtonPanel {
+  height: 80%;
+  cursor: pointer;
+  background: #384036;
+}
+
+@media (max-width: 500px) {
+  .group>button {
+    font-size: 1.1rem;
   }
 
-  button,
-  #Display {
-    font-size: 1.4em;
+  #Display>p:last-of-type {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+
+  .group>button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-height: 300px) {
+
+  .group>button {
+    font-size: 1rem;
   }
 }
