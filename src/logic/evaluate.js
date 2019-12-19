@@ -24,14 +24,14 @@ const PRECEDENCE = {
   '-': 1,
   x: 2,
   mod: 2,
-  [`\u00f7`]: 2,
+  '\u00f7': 2,
 };
 
 const readNumber = input => {
   let char;
   let number = '';
   let decimal = false;
-  while (!input.end() && /[0-9.]/.test(input.peek())) {
+  while (!input.end() && /[\d.]/.test(input.peek())) {
     char = input.next();
     if (decimal && char === '.') input.croak(`${number}. is not a number`);
     if (char === '.') decimal = true;
@@ -72,7 +72,7 @@ const Atom = input => {
       value: Atom(input),
     };
   }
-  if (/[0-9]/.test(char)) return readNumber(input);
+  if (/\d/.test(char)) return readNumber(input);
   return null;
 };
 
@@ -146,7 +146,10 @@ const evaluate = input => {
         throw new Error(`Unknown expression '${expression}'`);
     }
   };
-  return evaluator(expression).toPrecision(5);
+
+  const value = evaluator(expression).toString();
+  const decimal = value.split('.')[1] || '';
+  return Number(value).toFixed(Math.min(decimal.length, 5));
 };
 
 export default evaluate;
