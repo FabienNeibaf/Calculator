@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ name, type, clickHandler }) => {
-  const handleClick = () => clickHandler(name);
+  const handleClick = () => clickHandler && clickHandler(name);
 
   return (
     <button className={type} onClick={handleClick}>

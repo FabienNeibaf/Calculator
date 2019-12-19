@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
 
 * {
-  font-family: Exo, sans-serif;
   box-sizing: border-box;
+  font-family: Exo, sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :focus {
@@ -11,6 +12,7 @@
 
 ::-moz-focus-inner {
   border: none;
+  background: none;
 }
 
 html {
@@ -24,6 +26,7 @@ body {
 
 button:active {
   padding: 0;
+  background-color: none;
 }
 
 .x2 {
@@ -48,6 +51,7 @@ button:active {
 
 .group>button.control {
   background: #202822;
+  -webkit-appearance: button;
 }
 
 .group>button.numpad {
@@ -75,7 +79,7 @@ button:active {
 }
 
 #Display {
-  height: 20%;
+  height: 25%;
   color: #fff;
   background: #131a17;
 }
@@ -99,7 +103,7 @@ button:active {
 }
 
 #ButtonPanel {
-  height: 80%;
+  height: 75%;
   cursor: pointer;
   background: #384036;
 }
