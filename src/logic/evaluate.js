@@ -22,9 +22,9 @@ const InputStream = input => {
 const PRECEDENCE = {
   '+': 1,
   '-': 1,
-  x: 2,
+  '*': 2,
+  '/': 2,
   mod: 2,
-  '\u00f7': 2,
 };
 
 const readNumber = input => {
@@ -86,6 +86,7 @@ Expression = input => {
     }
     if (tree.type === 'binary' && PRECEDENCE[tree.operator] < PRECEDENCE[char])
       tree.right = {
+        type: 'binary',
         left: tree.right,
         operator: readOperator(input),
         right: Atom(input),
@@ -105,15 +106,17 @@ const normalize = input => {
   let res = '';
   const parens = [];
   for (let i = 0, l = input.length; i < l; i += 1) {
-    const char = input[i];
-    const last = res.slice(-1);
-    if (char === '(') {
-      res += /\d/.test(last) ? 'x(' : char;
-      parens.push(char);
-    } else if (char === ')') {
-      if (!parens.length) throw new Error('Invalid expression');
-      parens.pop();
-    } else if (/[^\s(]/.test(char)) res += char;
+    let char = input[i];
+    if (char !== ' ') {
+      if (char === 'x') char = '*';
+      else if (char === '\u00f7') char = '/';
+      else if (char === '(') parens.push(char);
+      else if (char === ')') {
+        if (!parens.length) throw new Error('Invalid expression');
+        parens.pop();
+      }
+      res += char;
+    }
   }
   return res;
 };
@@ -135,22 +138,19 @@ const evaluate = input => {
           return evaluator(expression.left) + evaluator(expression.right);
         if (op === '-')
           return evaluator(expression.left) - evaluator(expression.right);
-        if (op === 'x')
+        if (op === '*')
           return evaluator(expression.left) * evaluator(expression.right);
+        if (op === '/')
+          return evaluator(expression.left) / evaluator(expression.right);
         if (op === 'mod')
           return evaluator(expression.left) % evaluator(expression.right);
-        if (op === '\u00f7')
-          return evaluator(expression.left) / evaluator(expression.right);
         throw new Error(`Unknown operation: ${op}`);
       }
       default:
-        throw new Error(`Invalid expression: ${expression}`);
+        throw new Error('Invalid expression');
     }
   };
-
-  const value = evaluator(expression).toString();
-  const decimal = value.split('.')[1] || '';
-  return Number(value).toFixed(Math.min(decimal.length, 5));
+  return Number(evaluator(expression).toFixed(5));
 };
 
 export default evaluate;
