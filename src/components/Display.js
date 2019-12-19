@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Display = ({ expression, result }) => (
-  <h1 id="Display">
-    <span>{expression}</span>
-    {result}
-  </h1>
+  <div id="Display">
+    <p>{expression}</p>
+    <p>{result}</p>
+  </div>
 );
 
 Display.defaultProps = {
