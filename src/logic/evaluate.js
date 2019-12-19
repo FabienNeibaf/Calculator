@@ -37,9 +37,10 @@ const readNumber = input => {
     if (char === '.') decimal = true;
     number += char;
   }
-  if (input.peek() === '\u0025') {
+  number = Number(number);
+  if (input.peek() === '%') {
     input.next();
-    number = Number(number) / 100;
+    number /= 100;
   }
   return { type: 'number', value: number };
 };
@@ -48,11 +49,10 @@ const readOperator = input => {
   let operator = input.next();
   if (operator === 'm') {
     while (!input.end() && /[^\d(]/.test(input.peek()))
-      operator += input.next();
-    if (operator !== 'mod') input.croak(`Unknown operator '${operator}'`);
+      operator += input.next() || '';
+    if (operator !== 'mod') input.croak('Invalid expression');
   }
-  if (/[^\d(-]/.test(input.peek()))
-    input.croak(`Unknown operator '${operator}${input.peek()}'`);
+  if (/[^\d(-]/.test(input.peek())) input.croak('Invalid expression');
   return operator;
 };
 
@@ -107,20 +107,21 @@ const normalize = input => {
   for (let i = 0, l = input.length; i < l; i += 1) {
     const char = input[i];
     const last = res.slice(-1);
-    if (/[^\s(]/.test(char)) res += char;
     if (char === '(') {
       res += /\d/.test(last) ? 'x(' : char;
       parens.push(char);
-    }
-    if (char === ')') parens.pop();
+    } else if (char === ')') {
+      if (!parens.length) throw new Error('Invalid expression');
+      parens.pop();
+    } else if (/[^\s(]/.test(char)) res += char;
   }
-  if (parens.length) throw new Error('Unbalenced parenthensis');
   return res;
 };
 
 const evaluate = input => {
   const expression = Expression(InputStream(normalize(input)));
   const evaluator = expression => {
+    if (!expression) throw new Error('Invalid expression');
     switch (expression.type) {
       case 'number':
         return expression.value;
@@ -140,10 +141,10 @@ const evaluate = input => {
           return evaluator(expression.left) % evaluator(expression.right);
         if (op === '\u00f7')
           return evaluator(expression.left) / evaluator(expression.right);
-        throw new Error(`Unknown operation '${op}'`);
+        throw new Error(`Unknown operation: ${op}`);
       }
       default:
-        throw new Error(`Unknown expression '${expression}'`);
+        throw new Error(`Invalid expression: ${expression}`);
     }
   };
 
