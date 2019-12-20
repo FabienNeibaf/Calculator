@@ -97,7 +97,7 @@ const binary = (calculator, input) => {
 const compute = calculator => {
   let { result } = calculator;
   const { expression } = calculator;
-  if (expression) {
+  if (!result && expression) {
     try {
       result = evaluate(expression).toString();
       calculator.expression += ' =';
