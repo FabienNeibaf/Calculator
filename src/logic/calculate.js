@@ -58,12 +58,13 @@ const digit = (calculator, input) => {
   let { expression: exp } = calculator;
   if (input !== '.') {
     if (!/[%)]$/.test(exp)) exp = result ? input : (exp += input);
+    calculator.result = '';
   } else if (!result && exp) {
     let i = exp.length - 1;
     while (i >= 0 && /\d/.test(exp[i])) i -= 1;
     if (exp[i] !== '.') exp += input;
+    calculator.result = '';
   }
-  calculator.result = '';
   calculator.expression = exp;
   return calculator;
 };
