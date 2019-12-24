@@ -68,9 +68,9 @@ button:active {
 }
 
 #App {
-  margin: auto;
-  height: 100vh;
-  max-width: 1000px;
+  height: 86vh;
+  margin: 7vh auto;
+  max-width: 900px;
   border-radius: 3px;
 }
 
@@ -102,6 +102,13 @@ button:active {
   height: 75%;
   cursor: pointer;
   background: #384036;
+}
+
+@media (max-width: 900px) {
+  #App {
+    margin: auto;
+    height: 100vh;
+  }
 }
 
 @media (max-width: 500px) {
