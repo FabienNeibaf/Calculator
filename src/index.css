@@ -29,10 +29,6 @@ button:active {
   background-color: none;
 }
 
-.x2 {
-  width: 50%;
-}
-
 .group {
   display: flex;
   height: 16.66%;
