@@ -1,6 +1,6 @@
 # :hash: Calculator
 
-This is an envolving calculator that takes a mathematical expression and evaluates it.  
+This is an evolving calculator that takes a mathematical expression and evaluates it.  
 In the core it takes the user input, normalizes it, creates an expression object from the normalized input and evalutes the expresion.  
 I planned to make it more complex but it's a start.
 
