@@ -1,7 +1,8 @@
 # :hash: Calculator
 
-This project is the first of two projects in react.js.  
-It is part of [microverse](https://www.microverse.org/) curriculum.
+This is an envolving calculator that takes a mathematical expression and evaluates it.  
+In the core it takes the user input, normalizes it, creates an expression object from the normalized input and evalutes the expresion.  
+I planned to make it more complex but it's a start.
 
 # :electric_plug: Set up
 
