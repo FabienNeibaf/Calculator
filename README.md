@@ -9,6 +9,8 @@ In the core, it:
 
 I planned to make it more complex but it's a start.
 
+![Calculator](https://github.com/FabienNeibaf/Portfolio/blob/master/src/images/Calculata.png)
+
 # :electric_plug: Set up
 
 To run the project:
