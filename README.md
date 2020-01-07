@@ -1,15 +1,20 @@
 # :hash: Calculator
 
-This is an evolving calculator that takes a mathematical expression and evaluates it.
+This is an evolving calculator that takes any mathematical expression and evaluates it.
 In the core, it:
 - Takes the user input,
 - Normalizes it,
 - Creates an expression object from the normalized input, and
-- Evaluates the expression.  
-
-I planned to make it more complex but it's a start.
+- Evaluates the expression.
 
 ![Calculator](https://github.com/FabienNeibaf/Portfolio/blob/master/src/images/Calculata.png)
+
+# Technologies
+- React
+- Redux
+- HTML5
+- SASS
+- Parser
 
 # :electric_plug: Set up
 
@@ -28,5 +33,11 @@ To run the project:
 Feel free to contribute if you want to make it better.
 
 # Author
+- Github: https://github.com/FabienNeibaf
+- Email: fabienrakotomampiandra@gmail.com
 
-- [Fabien RAKOTOMAMPIANDRA](https://github.com/FabienNeibaf/)
+# Follow me
+- [LinkedIn](https://www.linkedin.com/in/fabien-rakotomampiandra-96567b17b/)
+- [AngelList](https://angel.co/fabien-rakotomampiandra)
+- [Twitter](https://twitter.com/Neibaflintone)
+- [Portfolio](https://fabienneibaf.github.io/Portfolio/)
